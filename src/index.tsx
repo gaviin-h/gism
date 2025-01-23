@@ -10,12 +10,10 @@ const App = () => {
  
 
   return (
-    <React.StrictMode>
-    <div style={{backgroundColor: "rgb(192, 192, 180)", minHeight: '98vh'}}>
+    <div >
       <Header />
       <MapArea />
     </div>
-    </React.StrictMode>
     
   );
 };

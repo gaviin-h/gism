@@ -40,5 +40,17 @@ module.exports = {
     static: path.join(__dirname, 'dist'),
     compress: true,
     port: 700,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+      "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+    },
+    proxy: [
+        {
+        context: ["/source_data"], // Match all requests starting with /source_data
+        target: "http://localhost:8080", // Forward to http-server on port 8080
+        changeOrigin: true, // Adjust the request origin
+      },
+    ]
   },
 };
